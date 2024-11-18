@@ -5,7 +5,32 @@ import os
 
 
 def decrypt():
-    print("")
+    
+    password = code.get()
+
+    if password == "1234":
+        screen2 = Toplevel(screen)
+        screen2.title("Decryption")
+        screen2.geometry("400x200")
+        screen2.configure(bg="#00bd56")
+
+        message = text1.get(1.0, END)
+        decode_message = message.encode("ascii")
+        base64_bytes = base64.b64encode(decode_message)
+        decrypt = base64_bytes.decode("ascii")
+
+        Label(screen2,text="DECRYPT",font="arial",fg="white",bg="#00bd56").place(x=10,y=0)
+        text2=Text(screen2,font="Rpbote 10", bg="white",relief=GROOVE,wrap=WORD,bd=0)
+        text2.place(x=10,y=40,width=380,height=150)
+
+        text2.insert(END,decrypt)
+    
+    elif password == "":
+        messagebox.showerror("Encryption","Input Password")
+
+    elif password != "1234":
+        messagebox.showerror("Encryption","Invalid Password")
+        
 
 
 def encrypt():
@@ -33,7 +58,7 @@ def encrypt():
 
     elif password != "1234":
         messagebox.showerror("Encryption","Invalid Password")
-        
+
 
 def main_screen():
 
