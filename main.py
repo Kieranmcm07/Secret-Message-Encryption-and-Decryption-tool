@@ -15,6 +15,11 @@ def main_screen():
 
     screen.title("Encryption and Decryption Tool")
 
+    def reset():
+        code.set("")
+        text1.delete(1.0, END)
+        
+
     Label(text="Enter text for encryption and decryption",
           fg="black", font=("calbri", 13)).place(x=10, y=10)
     text1 = Text(font="Robote 20", bg="white", relief=GROOVE, wrap=WORD, bd=0)
@@ -31,7 +36,8 @@ def main_screen():
            bg="#ed3833", fg="white", bd=0).place(x=10, y=250)
     Button(text="DECRYPT", height="2", width=23,
            bg="#00bd56", fg="white", bd=0).place(x=200, y=250)
-
+    Button(text="RESET", height="2", width=50, bg="#1089ff",
+           fg="white", bd=0,command=reset).place(x=10, y=300)
     screen.mainloop()
 
 
