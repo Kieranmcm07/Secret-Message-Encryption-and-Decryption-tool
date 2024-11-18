@@ -23,9 +23,15 @@ def main_screen():
     Label(text="Enter secret key for encryption and decryption",
           fg="black", font=("calibri", 13)).place(x=10, y=170)
 
-
     code = StringVar()
-    Entry(textvariable=code,width=19,bd=0,font=("arial", 25)).place(x=10, y=200)
+    Entry(textvariable=code, width=19, bd=0,
+          font=("arial", 25), show="*").place(x=10, y=200)
+
+    Button(text="ENCRYPT", height="2", width=23,
+           bg="#ed3833", fg="white", bd=0).place(x=10, y=250)
+    Button(text="DECRYPT", height="2", width=23,
+           bg="#00bd56", fg="white", bd=0).place(x=200, y=250)
+
     screen.mainloop()
 
 
